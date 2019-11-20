@@ -3,6 +3,7 @@ Store :: Store()
 {
 	store_Name = "null";
 }
+
 Store :: Store(string i)
 {
 	store_Name = i;
@@ -16,6 +17,7 @@ string Store :: getStoreName()
 {
 	return store_Name;
 }
+
 double Store :: getStoreRevenue()
 {
 	double temp = 0;
@@ -36,6 +38,7 @@ void Store :: addItem(string itemName , double cost, int quantity, int id)
 		x++;
 	}
 	stock[x] = Item(itemName,quantity,cost,id);
+	cout << "Item added!\n";
 }
 void Store :: removeItem(string name)
 {

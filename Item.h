@@ -1,12 +1,14 @@
+#ifndef ITEM_H
+#define ITEM_H
 #include<iostream>
 using namespace std;
 class Item
 {
 	private:
-		string product_Name;
-		int product_Quantity;
-		int product_ID;
-		double product_Cost;
+		string 	product_Name;
+		int 	product_Quantity;
+		int 	product_ID;
+		double 	product_Cost;
 	public:
 		// static int global_ID;
 
@@ -32,3 +34,4 @@ class Item
 		
 		string toString();
 };
+#endif

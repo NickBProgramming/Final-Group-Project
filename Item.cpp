@@ -7,6 +7,7 @@ Item :: Item()
 	product_ID = 00000;
 	product_Cost = 0;
 }
+
 Item :: Item(string input_Name,int input_Quantity,double input_Cost , int input_ID)
 {
 	product_Name = input_Name;

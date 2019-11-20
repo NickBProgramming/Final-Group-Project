@@ -1,13 +1,15 @@
+#ifndef STORE_H
+#define STORE_H
 #include<iostream>
 #include"Item.cpp"
 using namespace std;
 class Store
 {
 	private:
-		string store_Name;
-		int size;
-		Item stock[];
-		double revenue;
+		string 	store_Name;
+		int 	size;
+		Item 	stock[];
+		double 	revenue;
 	public:
 		Store();
 		Store(string);
@@ -22,3 +24,4 @@ class Store
 		
 		string toString();
 };
+#endif
