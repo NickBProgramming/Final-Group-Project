@@ -7,6 +7,7 @@ Store :: Store()
 Store :: Store(string i)
 {
 	store_Name = i;
+	cout << "Store " << i << " Created.\n";
 }
 
 void Store :: setStoreName(string i)
