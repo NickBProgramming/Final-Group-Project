@@ -2,14 +2,19 @@
 Store :: Store()
 {
 	store_Name = "null";
+	size = 0;
 }
 
 Store :: Store(string i)
 {
 	store_Name = i;
-	cout << "Store " << i << " Created.\n";
+	cout << "Store \"" << i << "\" Created.\n";
+	size = 0;
 }
-
+int Store :: getSize()
+{
+	return size;
+}
 void Store :: setStoreName(string i)
 {
 	store_Name = i;
@@ -33,13 +38,23 @@ double Store :: getStoreRevenue()
 
 void Store :: addItem(string itemName , double cost, int quantity, int id)
 {
-	int x = 0;
-	while (stock[x].getID() != 0)
+	if(size == 0)
 	{
-		x++;
+		stock[0] = Item(itemName,quantity,cost,id);
+		size++;
 	}
-	stock[x] = Item(itemName,quantity,cost,id);
-	cout << "Item added!\n";
+	else
+	{
+		
+		int x = 0;
+		while (stock[x].getID() != -1)
+		{
+			x++;
+		}
+		stock[x] = Item(itemName,quantity,cost,id);
+		size++;
+		cout << "Item added!\n";
+	}
 }
 void Store :: removeItem(string name)
 {
@@ -56,12 +71,20 @@ void Store :: removeItem(string name)
 
 string Store :: toString()
 {
-	int x = 0;
-	cout << "-----" << store_Name << "-----" << endl;
-	do
+	if(size == 0)
 	{
-		stock[x].toString();
+		cout <<"No Items in " << store_Name << "\n";
 	}
-	while(stock[x].getID() != -1);
+	else
+	{
+		
+		int x = 0;
+		cout << "-----" << store_Name << "-----" << endl;
+		printf("| %-15s | %-15s | %-15s  | %-15s |\n" , "Name" , "ID" , "Cost" , "Quantity");
+		for(int i = 0; i < size; i++)
+		{
+			stock[x].toString();
+		}
+	}
 
 }

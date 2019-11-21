@@ -1,3 +1,5 @@
+#ifndef STORE_H
+#define STORE_H
 #include<iostream>
 #include"Store.cpp"
 using namespace std;
@@ -11,3 +13,4 @@ class Inventory
 		void removeStore(string);
 		void displayStores();
 };
+#endif

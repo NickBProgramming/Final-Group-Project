@@ -33,4 +33,12 @@ void Inventory :: removeStore(string input)
 		x++;
 	}
 }
-void Inventory :: 
+void Inventory :: displayScores()
+{
+	int x = 0;
+	while(store[x].getStoreName() != "null")
+	{
+		store[x].toString();
+		x++;
+	}
+}

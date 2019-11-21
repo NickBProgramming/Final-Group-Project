@@ -4,7 +4,7 @@ Item :: Item()
 {
 	product_Name = "Null";
 	product_Quantity = 0;
-	product_ID = 00000;
+	product_ID = -1;
 	product_Cost = 0;
 }
 
@@ -12,8 +12,8 @@ Item :: Item(string input_Name,int input_Quantity,double input_Cost , int input_
 {
 	product_Name = input_Name;
 	product_Quantity = input_Quantity;
-	product_ID = input_ID;
 	product_Cost = input_Cost;
+	product_ID = input_ID;
 }
 
 void 	Item :: setName(string input_Name)
@@ -57,5 +57,5 @@ double 	Item :: getTotalCost()
 
 string 	Item :: toString()
 {
-	printf("| %-15s | %-15d | %-15d | %-15d |\n" , product_Name.c_str() , product_ID , getCost() , product_Quantity);
+	printf("| %-15s | %-15d | $%-15.2f | %-15d |\n" , product_Name.c_str() , product_ID , product_Cost , product_Quantity);
 }

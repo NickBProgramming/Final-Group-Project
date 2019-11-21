@@ -8,12 +8,12 @@ class Store
 	private:
 		string 	store_Name;
 		int 	size;
-		Item 	stock[];
+		Item 	stock[100];
 		double 	revenue;
 	public:
 		Store();
 		Store(string);
-		
+		getSize();
 		void setStoreName(string);
 		string getStoreName();
 		
