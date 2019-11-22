@@ -52,10 +52,11 @@ double 	Item :: getCost()
 double 	Item :: getTotalCost()
 {
 	double total = product_Cost * product_Quantity;
+	
 	return total;
 }
 
-string 	Item :: toString()
+void 	Item :: toString()
 {
 	printf("| %-15s | %-15d | $%-15.2f | %-15d |\n" , product_Name.c_str() , product_ID , product_Cost , product_Quantity);
 }

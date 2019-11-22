@@ -3,6 +3,7 @@ Store :: Store()
 {
 	store_Name = "null";
 	size = 0;
+	total = 0;
 }
 
 Store :: Store(string i)
@@ -10,6 +11,7 @@ Store :: Store(string i)
 	store_Name = i;
 	cout << "Store \"" << i << "\" Created.\n";
 	size = 0;
+	total = 0;
 }
 int Store :: getSize()
 {
@@ -24,16 +26,14 @@ string Store :: getStoreName()
 	return store_Name;
 }
 
-double Store :: getStoreRevenue()
+double Store :: getStoreValue()
 {
-	double temp = 0;
-	int x = 0;
-	do
+	total = 0;
+	for(int i = 0; i < 100; i++)
 	{
-		temp += stock[x].getTotalCost();
+		total += stock[i].getTotalCost();
 	}
-	while(stock[x].getID() != -1);
-	return temp;
+	return total;
 }
 
 void Store :: addItem(string itemName , double cost, int quantity, int id)
@@ -42,6 +42,7 @@ void Store :: addItem(string itemName , double cost, int quantity, int id)
 	{
 		stock[0] = Item(itemName,quantity,cost,id);
 		size++;
+		cout << "First Item added!\n";
 	}
 	else
 	{
@@ -51,25 +52,32 @@ void Store :: addItem(string itemName , double cost, int quantity, int id)
 		{
 			x++;
 		}
-		stock[x] = Item(itemName,quantity,cost,id);
+		stock[size] = Item(itemName,quantity,cost,id);
 		size++;
 		cout << "Item added!\n";
 	}
 }
 void Store :: removeItem(string name)
-{
-	int x = 0;
-	while (stock[x].getName() != "null")
+{	
+	int i = 0;
+	do
 	{
-		if(stock[x].getName() == name)
+		if(stock[i].getName() == name)
 		{
-			stock[x] = Item();
+			total = total - stock[i].getTotalCost();
+			stock[i] = Item();
+			cout << "Item \"" << name << "\" removed.\n";
+			size--;
+			
+			return;
 		}
 	}
+	while(stock[i].getName() != "Null");
+	cout << "No such item found.\n";
 	
 }
 
-string Store :: toString()
+void Store :: toString()
 {
 	if(size == 0)
 	{
@@ -77,13 +85,20 @@ string Store :: toString()
 	}
 	else
 	{
-		
+		getStoreValue();
 		int x = 0;
-		cout << "-----" << store_Name << "-----" << endl;
+		cout << "----------|Store Name: " << store_Name  << "|Store Value: " << total << "|----------" << endl;
 		printf("| %-15s | %-15s | %-15s  | %-15s |\n" , "Name" , "ID" , "Cost" , "Quantity");
-		for(int i = 0; i < size; i++)
+		for(int i = 0; i < 100; i++)
 		{
-			stock[x].toString();
+			if(stock[i].getName() == "Null")
+			{
+				// Do Nothing
+			}
+			else
+			{
+				stock[i].toString();
+			}
 		}
 	}
 

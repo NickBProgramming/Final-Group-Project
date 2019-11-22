@@ -30,8 +30,10 @@ class Item
 		double getCost();
 		
 		// Methods 
+		//Method for getting the total cost of that type of item
 		double getTotalCost();
 		
-		string toString();
+		//Method for displaying information about the item
+		void toString();
 };
 #endif
