@@ -1,20 +1,14 @@
+/* @Programmer Name: Nicholas Brown, Patrick Picca
+ * @Date: 11/30/19
+ * @Program Title: Driver: Store Inventory Management 
+ * @Program Description: The driver for a store inventory management system
+ */
 #include "Functions.cpp"
 using namespace std;
-void debug();
+Functions x;
 int main()
 {
-	
-	debug();
-	//Menu();
+	x.Menu();
+	return 0;
 }
-void debug()
-{
-	Store b = Store("Jerries");
-	b.addItem("Cherries" , 20 , 20 , 50);
-	b.addItem("Berries" , 12 , 40 , 16);
-	b.toString();
-	
-	b.removeItem("Cherries");
-	b.toString();
-	b.getStoreValue();
-}
+

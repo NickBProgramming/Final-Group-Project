@@ -1,3 +1,8 @@
+/* @Programmer Name: Nicholas Brown, Patrick Picca
+ * @Date: 11/30/19
+ * @Program Title: Item
+ * @Program Description: Object that holds the Item's name, quantity, ID, and cost
+ */
 #include"Item.h"
 
 Item :: Item()

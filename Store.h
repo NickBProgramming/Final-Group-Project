@@ -1,3 +1,8 @@
+/* @Programmer Name: Nicholas Brown, Patrick Picca
+ * @Date: 11/30/19
+ * @Program Title: Store Header File
+ * @Program Description: File for creating the layout and prototype of the Store class
+ */
 #ifndef STORE_H
 #define STORE_H
 #include<iostream>
@@ -24,16 +29,37 @@ class Store
 		string getStoreName();
 		
 		//Methods
-		// Method for getting the price of the entire store's stock
+		
+		/*---------------------------------------------------------------------------------------
+		Function Name: Get Store Value
+		Function Return Type:  Double
+		Parameters: 
+		Description: Method for getting the price of the entire store's stock
+		-----------------------------------------------------------------------------------------*/
 		double getStoreValue();
 		
-		//Method for adding items to the store
+		/*---------------------------------------------------------------------------------------
+		Function Name: Add Item
+		Return Type: Void
+		Parameters: string Item Name , double Item Cost, int Quantity, int ID
+		Method for adding items to the store
+		-----------------------------------------------------------------------------------------*/
 		void addItem(string itemName , double cost, int quantity, int id);
 		
-		//Method for removing items from the store
+		/*---------------------------------------------------------------------------------------
+		Function Name: Remove Item
+		Function Return Type: Void
+		Parameters: String of the item to remove's name
+		Description: Method for removing items from the store
+		----------------------------------------------------------------------------------------*/
 		void removeItem(string);
 		
-		//method for displaying all information about the store
+		/*--------------------------------------------------------------------------------------
+		Function Name: To String
+		Function Return Type: Void
+		Parameters:
+		Description: method for displaying all information about the store
+		----------------------------------------------------------------------------------------*/
 		void toString();
 };
 #endif

@@ -1,18 +1,18 @@
+/* @Programmer Name: Nicholas Brown, Patrick Picca
+ * @Date: 11/30/19
+ * @Program Title: Functions for driver
+ * @Program Description: Functions for use by the driver file
+ */
 #include<iostream>
-#include"Store.cpp"
+//#include"Store.cpp"
 #include"Functions.h"
 using namespace std;
-int inputCommand;
-string input;
-int size = 0;
-string name;
-double cost;
-int quantity;
-int ID;
-Store x[100];
-void Menu();
 
-void Menu()
+int size = 0;
+
+
+
+void Functions :: Menu()
 {
 	bool exit = false;
 	cout << "Welcome to the store inventory system\n";
@@ -55,20 +55,6 @@ void Menu()
 			}
 			case 2:
 			{
-				/*
-				cout << "Please input the store's name.\n";
-				cin >> input;
-				int j = 0;
-				while(x[j].getStoreName() != "null")
-				{
-					if(x[j].getStoreName() == input)
-					{
-						x[j] = x[j+1];
-					}
-					j++;
-				}
-				break;
-				*/
 				cout << "Please input the name of the store you would like to remove.\n";
 				cin >> input;
 				bool notFound = true;
@@ -121,6 +107,10 @@ void Menu()
 			}
 			case 5:
 			{
+				if(size == 0)
+				{
+					cout << "No Stores Found.\n";
+				}
 				for(int i = 0; i< size; i++)
 				{
 					if(x[i].getSize() == 0)

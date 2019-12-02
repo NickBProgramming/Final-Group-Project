@@ -1,3 +1,8 @@
+/* @Programmer Name: Nicholas Brown, Patrick Picca
+ * @Date: 11/30/19
+ * @Program Title: Item Header File
+ * @Program Description: File for creating the layout and prototype of the item class
+ */
 #ifndef ITEM_H
 #define ITEM_H
 #include<iostream>
@@ -30,10 +35,20 @@ class Item
 		double getCost();
 		
 		// Methods 
-		//Method for getting the total cost of that type of item
+		/*---------------------------------------------------------------------------------------
+		Function Name: Get Total Cost
+		Function Return Type: Double
+		Parameters: 
+		Description: Method for getting the total cost of that type of item
+		-----------------------------------------------------------------------------------------*/
 		double getTotalCost();
 		
-		//Method for displaying information about the item
+		/*---------------------------------------------------------------------------------------
+		Function Name: To String
+		Function Return Type: void
+		Parameters: 
+		Description: Method for displaying information about the item
+		-----------------------------------------------------------------------------------------*/
 		void toString();
 };
 #endif

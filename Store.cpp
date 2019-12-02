@@ -1,3 +1,8 @@
+/* @Programmer Name: Nicholas Brown, Patrick Picca
+ * @Date: 11/30/19
+ * @Program Title: Store File
+ * @Program Description: A class for a store, its data, and its items 
+ */
 #include"Store.h"
 Store :: Store()
 {
